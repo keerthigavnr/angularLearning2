@@ -1,0 +1,52 @@
+<p>contact works!</p>
+<form (ngSubmit)="submitForm(contactForm,loginData)" #contactForm="ngForm">
+
+
+    <div class="form-group">
+
+        <label for="firstName">First Name</label>
+        <input type="text" placeholder="Enter firstName" name="firstName" id="firstName"
+            [(ngModel)]="loginData.firstName" #firstName="ngModel" required minlength="3" maxlength="10"
+            pattern="^[a-zA-Z0-9]+$" class="form-control">
+
+
+        <div class="alert alert-danger" *ngIf="((submitted || firstName.touched) && firstName.invalid)">
+            <div *ngIf="firstName.errors?.['required']">
+                First Name is required
+            </div>
+            <div *ngIf="firstName.errors?.['minlength']">
+                First name should be minimum
+                {{firstName.errors?.['minlength']?.requiredLength}}
+            </div>
+            <div *ngIf="firstName.errors?.['pattern']">
+                First name doesn't match pattern
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" class="form-control"
+            [(ngModel)]="loginData.password" name="password" #password="ngModel" minlength="6" required />
+
+        <div class="alert alert-danger" *ngIf="((submitted || password.touched) && password.invalid)">
+            <div *ngIf="password.errors?.['required']">
+                Password is required
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea id="comment" placeholder="Enter your text" class="form-control" [(ngModel)]="loginData.comment"
+            name="comment" #comment="ngModel" required></textarea>
+        <div class="alert alert-danger" *ngIf="((submitted || comment.touched) && comment.invalid)">
+            <div *ngIf="comment.errors?.['required']">
+                Comment is required
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+</form>
