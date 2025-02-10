@@ -1,4 +1,8 @@
 <p>parent works!</p>
 <p>Sending to child: {{parentMessage}}</p>
 
-<app-child [message]="parentMessage"></app-child>
+<!-- <app-child [message]="parentMessage" (notify)="parentMethod($event)"></app-child>
+<p>Data passed from child:{{passData}}</p> -->
+
+<app-child [message]="parentMessage" (messageEvent)="receiveMessage($event)"></app-child>
+{{passData}}

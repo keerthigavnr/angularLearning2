@@ -1,0 +1,35 @@
+<p>pipes works!</p>
+
+<h1 class="text-center">{{pageTitle | titlecase}}</h1>
+<!-- 
+<p>uppercase: {{name | uppercase}}</p>
+<p>lowercase: {{name | lowercase}}</p>
+<p>slice: {{name | slice:3:5}}</p>
+<p>titlecase: {{'angular pipes' | titlecase}}</p>
+<p>Currency: {{1000 | currency:'INR'}}</p>
+<p>Date: {{today| date:'short'}}</p>
+<p>Percent: {{0.08 | percent}}</p> -->
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Salary</th>
+        <th>DOB</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name | uppercase}}</td>
+        <td>{{user.city | titlecase}}</td>
+        <td>{{user.salary | currency:'INR'}}</td>
+        <td>{{user.dob | date:'dd-MM-YYYY'}}</td>
+
+    </tr>
+</table>
+<div>
+    <pre>
+    {{users|json}}
+
+</pre>
+</div>

@@ -8,9 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChildComponent } from "./child/child.component";
 import { ParentComponent } from "./parent/parent.component";
+import { PipesComponent } from "./pipes/pipes.component";
 @NgModule(
     {
-        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent],
+        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent, PipesComponent],
         imports: [BrowserModule, AppRoutingModule, FormsModule],
         bootstrap: [AppComponent]
     }
