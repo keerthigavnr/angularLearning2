@@ -1,2 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap"
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+.invalid-feedback {
+    font-size: 0.875rem;
+}
+
+/* Custom styling for date input */
+input[type="date"] {
+    padding-top: 1.625rem !important;
+    padding-bottom: 0.625rem !important;
+}
+
+.custom-date-input {
+    height: 31px;
+    /* Matches the height of other form-control-sm inputs */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+}

@@ -1,0 +1,67 @@
+<!-- view-userData-modal.component.html -->
+<div class="modal" [class.show]="isOpen" [style.display]="isOpen ? 'block' : 'none'" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">UserDetails</h5>
+                <button type="button" class="btn-close" (click)="closeModal()"></button>
+            </div>
+
+            <div class="modal-body" *ngIf="userData">
+                <div class="row g-3">
+                    <!-- Personal Information -->
+                    <div class="col-md-6">
+                        <label class="fw-bold">First Name:</label>
+                        <p>{{userData.firstName}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="fw-bold">Last Name:</label>
+                        <p>{{userData.lastName}}</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="col-md-6">
+                        <label class="fw-bold">Email:</label>
+                        <p>{{userData.email}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="fw-bold">Phone:</label>
+                        <p>{{userData.phone}}</p>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="col-md-6">
+                        <label class="fw-bold">Date of Birth:</label>
+                        <p>{{userData.dob | date:'mediumDate'}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="fw-bold">Gender:</label>
+                        <p>{{userData.gender}}</p>
+                    </div>
+
+                    <!-- Address Information -->
+                    <div class="col-md-12">
+                        <label class="fw-bold">Address:</label>
+                        <p>{{userData.address}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="fw-bold">City:</label>
+                        <p>{{userData.city}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="fw-bold">State:</label>
+                        <p>{{userData.state}}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isOpen"></div>

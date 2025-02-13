@@ -15,9 +15,9 @@ export class ContactComponent implements OnInit {
 
   }
 
-  log(x: any) {
-    console.log(x);
-  }
+  // log(x: any) {
+  //   console.log(x);
+  // }
 
   loginData: any = {};
   submitted: boolean = false;

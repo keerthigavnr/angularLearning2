@@ -30,6 +30,10 @@
             [(ngModel)]="loginData.password" name="password" #password="ngModel" minlength="6" required />
 
         <div class="alert alert-danger" *ngIf="((submitted || password.touched) && password.invalid)">
+            <div *ngIf="password.errors?.['minlength']">
+                password should be minimum
+                {{password.errors?.['minlength']?.requiredLength}}
+            </div>
             <div *ngIf="password.errors?.['required']">
                 Password is required
             </div>

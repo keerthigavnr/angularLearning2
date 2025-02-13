@@ -1,1 +1,48 @@
-<p>about works!</p>
+<div class="container mt-5 col-md-5 col-lg-5">
+    <form>
+        <h2 class="mb-3 pb-2 border-bottom border-danger border-3 text-center">User registration</h2>
+        <div class=" mb-3">
+            <label for="Input1" class="form-label">Email address</label>
+            <input type="email" class="form-control form-control-sm" id="Input1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="Textarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control form-control-sm" id="Textarea1" rows="3"></textarea>
+        </div>
+        <div class="row g-4 align-items-center mb-3">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control form-control-sm"
+                    aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Must be 8-20 characters long.
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="inputDisabled" class="form-label">Read Only input</label>
+            <input class="form-control form-control-sm" type="text" id="inputDisabled" value="Disabled input" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">File input</label>
+            <input id="formFile" class="form-control form-control-sm" type="file">
+        </div>
+        <div class="mb-3">
+            <label for="exampleDataList" class="form-label">Datalist example</label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+            </datalist>
+        </div>
+
+
+    </form>
+</div>

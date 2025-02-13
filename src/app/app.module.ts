@@ -9,10 +9,15 @@ import { ContactComponent } from './contact/contact.component';
 import { ChildComponent } from "./child/child.component";
 import { ParentComponent } from "./parent/parent.component";
 import { PipesComponent } from "./pipes/pipes.component";
+import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { TableComponent } from "./table/table.component";
+import { ViewModalComponent } from "./view-modal/view-modal.component";
+import { EditModalComponent } from "./edit-modal/edit-modal.component";
 @NgModule(
     {
-        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent, PipesComponent],
-        imports: [BrowserModule, AppRoutingModule, FormsModule],
+        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent, PipesComponent, ReactiveFormComponent, TableComponent, ViewModalComponent, EditModalComponent],
+        imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
         bootstrap: [AppComponent]
     }
 )
