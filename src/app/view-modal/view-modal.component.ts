@@ -7,9 +7,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './view-modal.component.scss'
 })
 export class ViewModalComponent {
-  @Input() userData: any = null; // Data passed from parent (selected row)
+  @Input() userData: any = null;
   @Input() isOpen = false;
-  @Output() close = new EventEmitter<void>(); // Event to close modal
+  @Output() close = new EventEmitter<void>();
   closeModal(): void {
     this.close.emit();
   }

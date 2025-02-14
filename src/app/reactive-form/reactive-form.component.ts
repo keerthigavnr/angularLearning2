@@ -4,10 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
-  styleUrl: './reactive-form.component.scss'
+  styleUrl: './reactive-form.component.scss',
 })
 export class ReactiveFormComponent implements OnInit {
-
   userForm!: FormGroup;
   users: any[] = [
     {
@@ -19,14 +18,43 @@ export class ReactiveFormComponent implements OnInit {
       state: 'Karnataka',
       gender: 'male',
       address: '123, 4th Cross, 5th Main',
-      city: 'Bangalore'
+      city: 'Bangalore',
     },
   ];
   showTable: boolean = true;
   editingUserIndex: number | null = null;
-  states: string[] = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
+  states: string[] = [
+    'Andhra Pradesh',
+    'Arunachal Pradesh',
+    'Assam',
+    'Bihar',
+    'Chhattisgarh',
+    'Goa',
+    'Gujarat',
+    'Haryana',
+    'Himachal Pradesh',
+    'Jharkhand',
+    'Karnataka',
+    'Kerala',
+    'Madhya Pradesh',
+    'Maharashtra',
+    'Manipur',
+    'Meghalaya',
+    'Mizoram',
+    'Nagaland',
+    'Odisha',
+    'Punjab',
+    'Rajasthan',
+    'Sikkim',
+    'Tamil Nadu',
+    'Telangana',
+    'Tripura',
+    'Uttar Pradesh',
+    'Uttarakhand',
+    'West Bengal',
+  ];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -39,7 +67,7 @@ export class ReactiveFormComponent implements OnInit {
       address: ['', Validators.required],
       city: ['', Validators.required],
       pincode: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
     });
   }
 
@@ -56,17 +84,14 @@ export class ReactiveFormComponent implements OnInit {
     }
   }
 
-
-
-
   deleteUser(user: any) {
-    this.users = this.users.filter(u => u !== user);
+    this.users = this.users.filter((u) => u !== user);
   }
 
   selectedUser: any = null;
   isModalOpen = false;
   isEditModalOpen = false;
-  // ... rest of your existing component code ...
+
   editUser(user: any): void {
     this.selectedUser = user;
     this.isEditModalOpen = true;
@@ -86,16 +111,17 @@ export class ReactiveFormComponent implements OnInit {
   }
   saveUserData(updatedUserData: any): void {
     // Find the index of the user being edited
-    const userIndex = this.users.findIndex(user =>
-      user.email === this.selectedUser?.email &&
-      user.phone === this.selectedUser?.phone
+    const userIndex = this.users.findIndex(
+      (user) =>
+        user.email === this.selectedUser?.email &&
+        user.phone === this.selectedUser?.phone
     );
 
     if (userIndex !== -1) {
       // Update the user in the array
       this.users[userIndex] = {
         ...this.users[userIndex],
-        ...updatedUserData
+        ...updatedUserData,
       };
 
       // Create a new reference to trigger change detection

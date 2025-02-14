@@ -14,9 +14,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { TableComponent } from "./table/table.component";
 import { ViewModalComponent } from "./view-modal/view-modal.component";
 import { EditModalComponent } from "./edit-modal/edit-modal.component";
+import { AddComponent } from "./add/add.component";
 @NgModule(
     {
-        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent, PipesComponent, ReactiveFormComponent, TableComponent, ViewModalComponent, EditModalComponent],
+        declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent, ChildComponent, ParentComponent, PipesComponent, ReactiveFormComponent, TableComponent, ViewModalComponent, EditModalComponent, AddComponent],
         imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
         bootstrap: [AppComponent]
     }
